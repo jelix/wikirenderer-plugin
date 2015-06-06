@@ -1,6 +1,6 @@
 This is a plugin for jTpl or Castor, the template engine used by Jelix.
 
-This plugin allows to access to render wiki content in a template.
+This plugin allows to render wiki content in a template.
 It uses the library [WikiRenderer](http://wikirenderer.jelix.org).
 
 This plugin is for Jelix 1.7.x and higher. See the jelix/jelix repository to see
