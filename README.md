@@ -14,7 +14,7 @@ Jelix 1.7+ with Composer.
 In your project:
 
 ```
-composer require "jelix/wikirenderer-plugin:1.7.0"
+composer require "jelix/wikirenderer-plugin:1.7.1"
 ```
 
 Usage in a template:
