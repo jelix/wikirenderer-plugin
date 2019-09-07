@@ -14,6 +14,17 @@ class jWiki extends WikiRenderer {
 
     function __construct( $config=null) {
 
+        if ($config === null || $config === '') {
+            if (isset(jApp::config()->jwiki['defaultRules']) &&
+                jApp::config()->jwiki['defaultRules'] != ''
+            ) {
+                $config = (string) jApp::config()->jwiki['defaultRules'];
+            }
+            else {
+                $config = 'wr3_to_xhtml';
+            }
+        }
+
         if (is_string($config)) {
             if (class_exists($config)) {
                 // this is a class name 
@@ -32,8 +43,7 @@ class jWiki extends WikiRenderer {
             $this->config = $config;
         }
         else {
-            $this->config= new wr3_to_xhtml();
-            $this->config->charset = jApp::config()->charset;
+            throw new InvalidArgumentException('Bad value for wikirenderer configuration');
         }
 
         $this->inlineParser = new WikiInlineParser($this->config);
